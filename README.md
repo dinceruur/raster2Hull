@@ -24,7 +24,7 @@ normalized hull point cloud with surface normals.
 - **Self-contained pipeline.** Dataset split → mean-shape template → train →
   evaluate, all driven by a single YAML config.
 - **Open dataset.** ML-ready `.npz` plus raw vector PDFs / PNGs and hull STL
-  meshes, documented in [`DATASET.md`](DATASET.md).
+  meshes.
 
 ---
 
@@ -184,12 +184,13 @@ shared. See [`model/dataset_loader.py`](model/dataset_loader.py)
 
 ## Citation
 
-Plain
+If you use this work in your research, please consider citing:
 
-U. Dinçer, A. Mohammed, F. Stuer-Lauridsen and E. Samur, "Raster2Hull: Learning 3D Ship Hull Geometry From Raster 2D General Arrangement and Lines Drawings," in IEEE Access, vol. 14, pp. 117389-117405, 2026, doi: 10.1109/ACCESS.2026.3717961.
+**Plain Text**
+> U. Dinçer, A. Mohammed, F. Stuer-Lauridsen and E. Samur, "Raster2Hull: Learning 3D Ship Hull Geometry From Raster 2D General Arrangement and Lines Drawings," in *IEEE Access*, vol. 14, pp. 117389-117405, 2026, doi: [10.1109/ACCESS.2026.3717961](https://doi.org/10.1109/ACCESS.2026.3717961).
 
-BibTeX
-
+**BibTeX**
+```bibtex
 @ARTICLE{11630600,
   author={Dinçer, Uğur and Mohammed, Ahmed and Stuer-Lauridsen, Frank and Samur, Evren},
   journal={IEEE Access}, 

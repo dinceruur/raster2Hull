@@ -1,0 +1,36 @@
+#  Raster2Hull — training / inference / dataset-prep environment
+#
+#  Minimal env for the model only (not the dataset generator). Torch is a
+#  CUDA 12.8 build; the wheels bundle their own CUDA runtime, so only an
+#  NVIDIA driver is required on the host (no system CUDA toolkit).
+#
+#  Create with:
+#      conda env create -f environment.yml
+#      conda activate raster2hull
+name: raster2hull
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.19
+  - pip
+  - pip:
+      # PyTorch CUDA 12.8 wheels
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.9.1+cu128
+      - torchvision==0.24.1+cu128
+      # Core numerics
+      - numpy==2.2.6
+      - scipy==1.15.3
+      # Imaging / raster I/O
+      - opencv-python==5.0.0.93   # cv2  (train.py)
+      - pymupdf==1.28.2           # fitz (infer.py)
+      # Optimal transport (EMD / Sinkhorn in model/loss.py + infer.py)
+      - pot==0.9.7.post1
+      # Visualization / logging
+      - matplotlib==3.10.9
+      - seaborn==0.13.2
+      - torchview==0.2.7          # model graph (model/utility.py)
+      - tensorboard==2.21.0
+      - tqdm==4.70.1
+      # Config
+      - pyyaml==6.0.3

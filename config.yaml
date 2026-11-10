@@ -1,0 +1,28 @@
+model:
+  input_channels: 1
+  stem_channels: 32
+  enc_channels: [64, 128, 256]
+  num_views: 3 # without background
+  num_points: 1024
+  attn_hidden_dim: 256
+  attn_head: 4
+  attn_layers: 4
+training:
+    checkpoints_dir: "checkpoints"
+    save_every: 20
+    batch_size: 4
+    learning_rate: 0.0003
+    num_epochs: 1000
+    early_stop_patience: 75
+    resume_training: False
+    resume_checkpoint_path : "checkpoints/checkpoint_latest.pth.tar"
+dataset:
+  drawing_type: "ga_simple"  # lines | ga_simple (hull-only GA) | ga_detailed (full GA) | ga (alias)
+  augment : True
+  dir: "dataset"
+  raw_dir: "npz"  # unsplit .npz dir from the Zenodo tarball; prepare_dataset.py splits it (or pass --source_dir)
+  train_ratio : 0.8
+  val_ratio: 0.15
+  test_ratio: 0.05
+  img_width: 128 
+  num_points: 1024

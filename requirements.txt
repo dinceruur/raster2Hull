@@ -1,0 +1,27 @@
+# Raster2Hull — pip requirements (training / inference / dataset-prep)
+# Target: Python 3.10.19
+#
+# PyTorch is a CUDA 12.8 build; the --extra-index-url below is required.
+# Install with:
+#     pip install -r requirements.txt
+#
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+torch==2.9.1+cu128
+torchvision==0.24.1+cu128
+
+numpy==2.2.6
+scipy==1.15.3
+
+opencv-python==5.0.0.93   # cv2  (train.py)
+pymupdf==1.28.2           # fitz (infer.py)
+
+pot==0.9.7.post1          # optimal transport (model/loss.py, infer.py)
+
+matplotlib==3.10.9
+seaborn==0.13.2
+torchview==0.2.7          # model graph (model/utility.py)
+tensorboard==2.21.0
+tqdm==4.70.1
+
+pyyaml==6.0.3

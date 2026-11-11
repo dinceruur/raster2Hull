@@ -44,13 +44,13 @@ conda activate raster2hull
 
 ## Dataset
 
-The **ShipPlan** dataset is hosted on Zenodo (too large for the git tree).
+The **ShipPlan** dataset is hosted on Zenodo ([10.5281/zenodo.24101497](https://doi.org/10.5281/zenodo.24101497)). 
 Download the ML-ready archive, extract it (yields an unsplit `npz/` folder), and
 create the train/val/test split with `prepare_dataset.py` (ratios and seed come
 from `config.yaml`):
 
 ```bash
-wget https://zenodo.org/records/<RECORD>/files/shipplan_npz.tar.gz
+wget https://zenodo.org/records/24101498/files/shipplan_npz.tar.gz
 tar -xzf shipplan_npz.tar.gz                 # -> npz/
 python scripts/prepare_dataset.py            # npz/ -> dataset/{train,val,test}/
 ```
